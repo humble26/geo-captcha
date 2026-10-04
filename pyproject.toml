@@ -7,7 +7,13 @@ name = "geo-captcha"
 version = "2.2.0"
 description = "几何验证码工具集：slider_captcha 求解库 + geo_captcha 统一评测框架"
 readme = "README.md"
+license = { text = "MIT" }
 requires-python = ">=3.9"
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Security",
+]
 dependencies = [
     "numpy>=1.20",
     "opencv-python>=4.5",

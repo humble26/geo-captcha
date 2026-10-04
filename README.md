@@ -172,3 +172,7 @@ if result.ok:
 - Python 3.10.11 与 3.14.6 双解释器验证（29 个单测 + 全部 CLI）；
 - 两解释器均为 OpenCV 5.0 / Pillow 12；
 - 集成计划：见 `docs/集成任务提示词.md`（供接入 Token 领取助手）。
+
+## 许可证
+
+[MIT](LICENSE)
