@@ -1,0 +1,10 @@
+numpy>=1.20
+opencv-python>=4.5
+pillow>=9.0
+
+# 浏览器求解（slider_captcha 的 Playwright 适配器与跑批器需要，可选）：
+#   pip install -e ".[browser]"
+#   python -m playwright install chromium
+#
+# 说明：geo_captcha 的 slider 题型复用同仓库的 slider_captcha 包，
+# 单仓库安装后两个包同时可用；未装 playwright 时仅浏览器相关入口降级。

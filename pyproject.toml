@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geo-captcha"
+version = "2.2.0"
+description = "几何验证码工具集：slider_captcha 求解库 + geo_captcha 统一评测框架"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.20",
+    "opencv-python>=4.5",
+    "pillow>=9.0",
+]
+
+[project.optional-dependencies]
+browser = ["playwright>=1.30"]
+
+[project.scripts]
+geo-captcha = "geo_captcha.__main__:main"
+slider-captcha-run = "slider_captcha.runner:main"
+slider-captcha-doctor = "slider_captcha.doctor:main"
+
+[tool.setuptools]
+packages = ["slider_captcha", "geo_captcha", "geo_captcha.types"]
+
+[tool.setuptools.package-data]
+slider_captcha = ["demo/*.html"]
