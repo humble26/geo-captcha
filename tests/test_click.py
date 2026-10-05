@@ -6,9 +6,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+from geo_captcha import synth
 from geo_captcha.types import click
 
 
+@unittest.skipUnless(synth.find_font(),
+                     '本机没有可用的中文字体（synth.find_font 未命中），点选题用例跳过')
 class TestClick(unittest.TestCase):
     def test_deterministic(self):
         s1 = click.generate(123)

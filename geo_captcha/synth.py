@@ -14,9 +14,14 @@ import cv2
 import numpy as np
 
 # 中文渲染候选字体（按序探测；都没有则退化为 ASCII 池）
+# 目录按平台排列：Windows 优先（本机行为不变），Linux 供 CI/移植使用（Noto CJK / 文泉驿正黑）
 _FONT_CANDIDATES = ['msyh.ttc', 'msyhbd.ttc', 'simhei.ttf', 'simsun.ttc',
-                    'Deng.ttf', 'arial.ttf']
-_FONT_DIRS = [Path('C:/Windows/Fonts')]
+                    'Deng.ttf', 'arial.ttf',
+                    'NotoSansCJK-Regular.ttc', 'NotoSansCJKsc-Regular.otf',
+                    'wqy-zenhei.ttc']
+_FONT_DIRS = [Path('C:/Windows/Fonts'),
+              Path('/usr/share/fonts/opentype/noto'),
+              Path('/usr/share/fonts/truetype/wqy')]
 
 
 def find_font() -> Optional[str]:

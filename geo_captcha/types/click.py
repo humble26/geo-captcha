@@ -65,7 +65,8 @@ def generate(seed: int, difficulty: Difficulty = None) -> Sample:
     prng = random.Random(seed)
     font = synth.find_font()
     if font is None:
-        raise RuntimeError('未找到可用的中文字体（C:\\Windows\\Fonts），点选题无法生成')
+        raise RuntimeError('未找到可用的中文字体（Windows: C:/Windows/Fonts 或 '
+                           'Linux: /usr/share/fonts），点选题无法生成')
 
     hue0 = float(rng.integers(0, 360))
     img = synth.texture_background(W, H, rng, richness=0.9 * (1 + d.noise),
